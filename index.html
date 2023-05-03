@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    justify-content: center;
+    display: flex;
+    }
+
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 16px;
+    transition: 0.3s;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color:#ccc;
+    color: orange;
+    border-bottom: 4px;
+    border-color: black;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  </style>
+  <script>
+    function openCity(evt, cityName) {
+  // Declare all variables
+  
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  }
+  window.onload = function () {  
+  document.getElementById("defaultOpen").click();
+  }
+  </script>
+  <title>epic-loading-bar</title>
+</head>
+
+<body>
+  <div class="tab" >
+    
+    <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'London')">London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="London" class="tabcontent">
+    <smart-loading-bar title = "anish" duration = "4" end = "4" width = "40"></smart-loading-bar>
+    <smart-loading-bar title = "gg" duration = "5" end = "5" width = "50"></smart-loading-bar>
+    <smart-loading-bar title = "anc" duration = "2" end = "2" width = "20"></smart-loading-bar>
+    <smart-loading-bar title = "anc" duration = "3" end = "3" width = "30"></smart-loading-bar>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <smart-loading-bar title = "anish" duration = "4" end = "4" width = "40"></smart-loading-bar>
+    <smart-loading-bar title = "gg" duration = "10" end = "10" width = "100"></smart-loading-bar>
+    <smart-loading-bar title = "anc" duration = "3" end = "3" width = "30"></smart-loading-bar>
+    <smart-loading-bar title = "anc" duration = "3" end = "3" width = "30"></smart-loading-bar>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <smart-loading-bar title = "anish" duration = "4" end = "4" width = "40"></smart-loading-bar>
+    <smart-loading-bar title = "gg" duration = "5" end = "5" width = "50"></smart-loading-bar>
+    <smart-loading-bar title = "anc" duration = "2" end = "2" width = "20"></smart-loading-bar>
+    <smart-loading-bar title = "anc" duration = "3" end = "3" width = "30"></smart-loading-bar>
+  </div>
+  <!-- <smart-loading-bar title = "anish" duration = "4" end = "4" width = "40"></smart-loading-bar>
+  <smart-loading-bar title = "gg" duration = "5" end = "5" width = "50"></smart-loading-bar>
+  <smart-loading-bar title = "anc" duration = "2" end = "2" width = "20"></smart-loading-bar>
+  <smart-loading-bar title = "anc" duration = "3" end = "3" width = "30"></smart-loading-bar> -->
+
+  <!-- <smart-loading-bar title = "anish" duration = "4" end = "4" ></smart-loading-bar>
+  <smart-loading-bar title = "gg" duration = "5" end = "5" ></smart-loading-bar>
+  <smart-loading-bar title = "anc" duration = "2" end = "2"></smart-loading-bar>
+  <smart-loading-bar title = "anc" duration = "3" end = "3" ></smart-loading-bar> -->
+
+  <script type="module" src="./src/smart-loading-bar.js"></script>
+  
+</body>
+
+</html>
